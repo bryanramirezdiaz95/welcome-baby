@@ -1,5 +1,5 @@
 from django.db import models
-from registries.models import Registry
+from apps.registries.models import Registry
 
 class Product(models.Model):
     registry = models.ForeignKey(
