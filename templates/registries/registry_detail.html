@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ registry.title }}</title>
+</head>
+<body>
+    <h1>{{ registry.title }}</h1>
+    <p>{{ registry.description }}</p>
+
+    <hr>
+
+    <h2>Regalos</h2>
+
+    {% if products %}
+        <ul>
+        {% for product in products %}
+            <li>
+                <strong>{{ product.name }}</strong><br>
+                <img src="{{ product.image_url }}" alt="{{ product.name }}" width="200"><br> 
+                {{ product.description }}<br>
+
+                {% if product.price %}
+                    Precio aprox: ${{ product.price }}<br>
+                {% endif %}
+
+                <a href="{{ product.url }}" target="_blank">
+                    Comprar en Mercado Libre
+                </a>
+
+                {% if product.is_reserved %}
+                    <span> (Ya comprado)</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay productos aún.</p>
+    {% endif %}
+</body>
+</html>
