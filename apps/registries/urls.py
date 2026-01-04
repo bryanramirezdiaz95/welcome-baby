@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import registry_detail
+from .views import *
 
 app_name = 'registries'
 
 urlpatterns = [
-    path('<slug:slug>/', registry_detail, name='detail'),
+    path('', registry_list, name='catalog'),
 ]

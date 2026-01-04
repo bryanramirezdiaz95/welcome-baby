@@ -1,0 +1,12 @@
+.card-img {
+    height: 180px;   /* prueba 160–200 */
+    width: 100%;
+    object-fit: contain;
+    background-color: #f8f9fa;
+}
+.card-img:hover {
+    transform: scale(1.05); /* Aumenta el tamaño al 105% */
+    transition: transform 0.3s ease; /* Suaviza la transición */
+}
+
+
